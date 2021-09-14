@@ -4,11 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductsComponent } from './components/products/products.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { CartItemsComponent } from './components/cart/cart-items/cart-items.component';
+import { ProductListItemsComponent } from './components/product-list/product-list-items/product-list-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ProductsComponent,
+    CartComponent,
+    ProductListComponent,
+    CartItemsComponent,
+    ProductListItemsComponent
   ],
   imports: [
     BrowserModule,
