@@ -2,18 +2,19 @@
 
 <nav class="navbar navbar-success bg-success justify-content-between">
 
-    <form class="form-inline">
-        <input type="text" placeholder="Username" style="margin-left: 670px;">
-        <input type="password" placeholder="Password" style="margin-left: 20px;">
-        <input type="submit" class="btn btn-danger" value="Login" style="margin-left: 10px;">
+    <form class="form-inline"  (submit)="login()">
+        <input type="text" placeholder="Username" style="margin-left: 630px;">
+        <input type="password" placeholder="Password" style="margin-left: 10px;margin-right: 10px;">
+        <input type="submit" class="btn btn-danger" value="Login" style="float: right;">
      
     </form>
+    
   </nav>
 <div class="container" >
     <header><B>Register</B> </header>
     
     <div id="inner">
-    <form>
+    <form (submit)="registration()">
         <label for="username" ><span style="margin-left: 57px;">Username : </span></label>
         <input type="text" id="username" style="height: 30px;" name="username" required>
         <label for="password"><span style="margin-left: 57px;">Password : </span></label>
