@@ -1,5 +1,6 @@
-<div>
-<span>{{item.name}}</span> x <span> 4</span> : <strong>{{500 | currency:'INR'}}</strong>
-<button style="margin-left:10px" class="btn btn-outline-danger" >Remove</button>
+<div class="contain">
+
+<img [src]="item.image" style="width: 30px; height: 40px;margin-right: 10px;"><span>{{item.name}}</span> x <span> {{item.quantity}} </span> : <strong>{{(item.quantity * item.price) | currency:'INR'}}</strong>
+<button style="float: right;" class="btn btn-outline-danger" >Remove</button>
 
 </div>

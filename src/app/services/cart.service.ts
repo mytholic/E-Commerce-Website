@@ -13,10 +13,26 @@ export class CartService {
 
   }
   addToCart(product: Product) {
-    this.cartItems.push(product);
-    this.count=this.count+1;
+
+    let itemExist=false
+  
+    for(let i in this.cartItems){
+      if(this.cartItems[i].id==product.id){
+        this.cartItems[i].quantity=this.cartItems[i].quantity+1
+        itemExist=true
+        break;
+      }
+      }
     
-  }
+    if(!itemExist){
+      this.cartItems.push(product);
+    }
+   
+    }
+    
+  
+    
+
 
   getItems() {
     return this.cartItems;
