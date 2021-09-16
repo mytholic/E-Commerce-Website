@@ -11,18 +11,19 @@
     
   </nav>
 <div class="container" >
-    <header><B>Register</B> </header>
+    <header><B style="text-align: center;">Register</B> </header>
     
     <div id="inner">
     <form (submit)="registration()">
+        <label for="name" ><span style="margin-left: 87px;">Name : </span></label>
+        <input type="text" id="name" style="height: 30px;" name="name" required>
         <label for="username" ><span style="margin-left: 57px;">Username : </span></label>
-        <input type="text" id="username" style="height: 30px;" name="username" required>
+        <input type="text" id="username" style="height: 30px;margin-top: 40px;" name="username" required><br>
         <label for="password"><span style="margin-left: 57px;">Password : </span></label>
         <input type="password" style="margin-top: 40px; height: 35px;"id="password"required><br>
         <label for="cpassword">Confirm Password : </label>
         <input type="password" style="margin-top: 40px; height: 35px;"id="cpassword"required><br>
-        <label for="number"><span style="margin-left: 66px;">Number : </span></label>
-        <input type="number" id="number" style="margin-top: 40px;height: 30px;" name="number" required><br>
+        
         <label for="address"><span style="margin-left: 66px;">Address : </span> </label>
         <input type="text" id="address" style="margin-top: 40px;height: 130px;" name="address" required><br>
         <input type="submit" style="margin-left: 200px;margin-top: 20px;"class="btn btn-success" value="Register"> 
