@@ -7,12 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-   countItems:number=this.cartservice.count;
+  count:number;
   constructor(private cartservice:CartService,private router:Router) { }
   
   ngOnInit(): void {
+   
+    this.cartservice.castCount.subscribe(count=>this.count=count)
   }
 cartPage(){
   this.router.navigate(['/cart'])
+ 
 }
 }
+
+

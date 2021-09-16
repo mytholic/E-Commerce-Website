@@ -8,15 +8,16 @@ import { Product } from 'src/app/models/product';
 })
 export class CartComponent implements OnInit {
   listOfProducts:Product[]=[]
-  cartTotal=0
+  cartTotal:number;
   constructor(private cartservice:CartService) { }
 
   ngOnInit(): void {
     this.listOfProducts=this.cartservice.getItems()
     this.listOfProducts.forEach(item=>{
-      this.cartTotal+=(item.quantity*item.price)
+      this.cartTotal=this.cartservice.TotalCost()
     })
+    this.cartservice.castTotal.subscribe(cartTotal=>this.cartTotal=cartTotal)
+  }
+  
   }
 
-
-}

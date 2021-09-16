@@ -8,7 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductListItemsComponent implements OnInit {
   @Input() items:Product
-
+  count:number
   constructor(private cartservice:CartService) { }
 
   ngOnInit(): void {
@@ -16,7 +16,8 @@ export class ProductListItemsComponent implements OnInit {
   }
   addToCart(product: Product) {
     this.cartservice.addToCart(product);
- 
+    this.count=this.cartservice.itemCountInCart()
+    this.cartservice.castCount.subscribe(count=>this.count=count)
     alert("added successfully");
   }
 
