@@ -1,34 +1,38 @@
-
-
 <nav class="navbar navbar-success bg-success justify-content-between">
 
-    <form class="form-inline"  (submit)="login()">
-        <input type="text" placeholder="Username" style="margin-left: 630px;">
-        <input type="password" placeholder="Password" style="margin-left: 10px;margin-right: 10px;">
+    <form class="form-inline" #loginform="ngForm" (submit)="login()">
+        <input type="text" placeholder="Username" style="margin-left: 630px;" name="username"
+            [(ngModel)]="user.username">
+        <input type="password" placeholder="Password" name="password" style="margin-left: 10px;margin-right: 10px;"
+            [(ngModel)]="user.password">
         <input type="submit" class="btn btn-danger" value="Login" style="float: right;">
-     
+
     </form>
-    
-  </nav>
-<div class="container" >
+
+</nav>
+<div class="container">
     <header><B style="text-align: center;">Register</B> </header>
-    
+
     <div id="inner">
-    <form (submit)="registration()">
-        <label for="name" ><span style="margin-left: 87px;">Name : </span></label>
-        <input type="text" id="name" style="height: 30px;" name="name" required>
-        <label for="username" ><span style="margin-left: 57px;">Username : </span></label>
-        <input type="text" id="username" style="height: 30px;margin-top: 40px;" name="username" required><br>
-        <label for="password"><span style="margin-left: 57px;">Password : </span></label>
-        <input type="password" style="margin-top: 40px; height: 35px;"id="password"required><br>
-        <label for="cpassword">Confirm Password : </label>
-        <input type="password" style="margin-top: 40px; height: 35px;"id="cpassword"required><br>
-        
-        <label for="address"><span style="margin-left: 66px;">Address : </span> </label>
-        <input type="text" id="address" style="margin-top: 40px;height: 130px;" name="address" required><br>
-        <input type="submit" style="margin-left: 200px;margin-top: 20px;"class="btn btn-success" value="Register"> 
-      
-    </form>
-</div>
- 
+        <form (submit)="registration()" #registerform="ngForm">
+            <label for="name"><span style="margin-left: 87px;">Name : </span></label>
+            <input type="text" id="name" style="height: 30px;" name="name" required [(ngModel)]="user.name">
+            <label for="username"><span style="margin-left: 57px;">Username : </span></label>
+            <input type="text" id="username" style="height: 30px;margin-top: 40px;" name="username"
+                [(ngModel)]="user.username" required><br>
+            <label for="password"><span style="margin-left: 57px;">Password : </span></label>
+            <input type="password" style="margin-top: 40px; height: 35px;" id="password" required name="password"
+                [(ngModel)]="user.password"><br>
+            <label for="cpassword">Confirm Password : </label>
+            <input type="password" style="margin-top: 40px; height: 35px;" id="cpassword" required name="cpassword"
+                [(ngModel)]="user.cpassword"><br>
+
+            <label for="address"><span style="margin-left: 66px;">Address : </span> </label>
+            <input type="text" id="address" style="margin-top: 40px;height: 130px;" name="address"
+                [(ngModel)]="user.address" required><br>
+            <input type="submit" style="margin-left: 200px;margin-top: 20px;" class="btn btn-success" value="Register">
+
+        </form>
+    </div>
+
 </div>

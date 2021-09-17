@@ -11,6 +11,8 @@ import { CartItemsComponent } from './components/cart/cart-items/cart-items.comp
 import { ProductListItemsComponent } from './components/product-list/product-list-items/product-list-items.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { CountComponent } from './components/count/count.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { CountComponent } from './components/count/count.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

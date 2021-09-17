@@ -7,4 +7,8 @@ import com.app.registration.model.User;
 @Repository
 public interface RegistrationRepository extends JpaRepository<User, Integer> {
 
+	User getByUsername(String username);
+
+	User getByUsernameAndPassword(String username, String password);
+
 }

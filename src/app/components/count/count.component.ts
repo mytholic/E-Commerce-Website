@@ -10,7 +10,7 @@ export class CountComponent implements OnInit {
   constructor(private cartservice:CartService) { }
 
   ngOnInit(): void {
-    
+    this.count=this.cartservice.itemCountInCart()
     this.cartservice.castCount.subscribe(count=>this.count=count)
   }
 
