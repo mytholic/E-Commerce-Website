@@ -75,6 +75,10 @@ export class CartService {
   }
 
   clearCart() {
+    this.count=0
+    this.cartTotal=0;
+    this.Total.next(this.cartTotal)
+    this.countItem.next(this.count)
     this.cartItems = [];
     return this.cartItems;
   }

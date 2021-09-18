@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { Product } from '../models/product';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  categoryValue:string="";
 
   products:Product[]=[
     new Product('shirt',1,"Men's Formal Shirt",200,"Fit Type: Regular, Material - 100% Cotton, Regular fit and Full sleeve shirt, Collar style - Classic collar, Cuff style - Single cuff, Pattern: Solid Men’s Formal Shirt",'/assets/images/SHIRT.jpg'),
@@ -14,10 +17,30 @@ export class ProductService {
     ,'/assets/images/tv.jpeg'),
     new Product('power bank',6,"Mi Power Bank",1500,"18W Fast Charging, Triple port output, Dual input port (Micro-USB/USB-C, Charging Time : 6.9 hours, Power Delivery, Advanced 12 Layer chip protection, Smart power management, 6 months domestic warranty",'/assets/images/powerBank.jpeg'),
   ]
+ 
 
   constructor() { }
   getProducts():Product[]{
- return this.products
+  
+      return this.products
+    }
+    
+  
+
+  
+  setCategory(val:string){
+    this.categoryValue=val;
   }
+ 
 }
 
+// if(this.categoryValue==""){
+//   console.log("no")
+//   return this.products
+// }
+
+// this.products=this.products.filter(item=>item.category===this.categoryValue)
+// console.log('hi') 
+// return this.products
+
+// }

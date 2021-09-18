@@ -1,7 +1,7 @@
 <div id="filter" class="card" style="width: auto;">
     <section class="mb-4" >
         <h6 >Category</h6>
-      
+      <form #filterForm="ngForm" (ngSubmit)="filter(filterForm.value)"> 
         <div class="form-check pl-0 mb-3">
           <input
         
@@ -9,6 +9,8 @@
             class="filter-option form-check-input"
             id="shirts"
             name="category"
+            value="shirts"
+            ngModel
           />
           <label
             class="form-check-label small text-uppercase card-link-secondary"
@@ -23,6 +25,8 @@
             class="filter-option form-check-input"
             id="pants"
             name="category"
+            value="pants"
+            ngModel
           />
           <label
             class="form-check-label small text-uppercase card-link-secondary"
@@ -37,6 +41,8 @@
             class="filter-option form-check-input"
             id="phone"
             name="category"
+            value="phone"
+            ngModel
           />
           <label
             class="form-check-label small text-uppercase card-link-secondary"
@@ -51,6 +57,8 @@
             class="filter-option form-check-input"
             id="laptop"
             name="category"
+            value="laptop"
+            ngModel
           />
           <label
             class="form-check-label small text-uppercase card-link-secondary"
@@ -65,6 +73,8 @@
             class="filter-option form-check-input"
             id="tv"
             name="category"
+            ngModel
+            value="tv"
           />
           <label
             class="form-check-label small text-uppercase card-link-secondary"
@@ -79,6 +89,8 @@
               class="filter-option form-check-input"
               id="powerbank"
               name="category"
+              ngModel
+              value="powerbank"
             />
             <label
               class="form-check-label small text-uppercase card-link-secondary"
@@ -86,80 +98,8 @@
               >power bank</label
             >
           </div>
-      </section>
-<section class="mb-4" >
-    <h6 >Price</h6>
-  
-    <div class="form-check pl-0 mb-3">
-      <input
-    
-        type="radio"
-        class="filter-option form-check-input"
-        id="under250"
-        name="materialprice"
-      />
-      <label
-        class="form-check-label small text-uppercase card-link-secondary"
-        for="under250"
-        >Under {{250|currency:'INR'}} </label>
       
-    </div>
-    <div class="form-check pl-0 mb-3">
-      <input
-        
-        type="radio"
-        class="filter-option form-check-input"
-        id="500"
-        name="materialprice"
-      />
-      <label
-        class="form-check-label small text-uppercase card-link-secondary"
-        for="500"
-        >{{250|currency:'INR'}} - {{500|currency:'INR'}}</label
-      >
-    </div>
-    <div class="form-check pl-0 mb-3">
-      <input
-      
-        type="radio"
-        class="filter-option form-check-input"
-        id="5000"
-        name="materialprice"
-      />
-      <label
-        class="form-check-label small text-uppercase card-link-secondary"
-        for="5000"
-        >{{5000|currency:'INR'}} - {{25000|currency:'INR'}}</label
-      >
-    </div>
-    <div class="form-check pl-0 mb-3">
-      <input
-      
-        type="radio"
-        class="filter-option form-check-input"
-        id="25000"
-        name="materialprice"
-      />
-      <label
-        class="form-check-label small text-uppercase card-link-secondary"
-        for="25000"
-        >{{25000|currency:'INR'}} - {{50000|currency:'INR'}}</label
-      >
-    </div>
-    <div class="form-check pl-0 mb-3">
-      <input
-
-        type="radio"
-        class="filter-option form-check-input"
-        id="50000above"
-        name="materialprice"
-      />
-      <label
-        class="form-check-label small text-uppercase card-link-secondary"
-        for="50000above"
-        >{{50000|currency:'INR'}} Above</label
-      >
-    </div>
+      <input type="submit" class="btn btn-success" value="search">
+    </form>
   </section>
- 
   </div>

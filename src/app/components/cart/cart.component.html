@@ -1,11 +1,20 @@
-<div class="item-container">
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <button class="btn btn-outline-danger " style="float: right;" routerLink="/product">Home</button>
+      <button class="btn btn-outline-danger " style="float: right;" (click)="logout()">Log Out</button>
+      
+  </nav>
+
+<div class="item-container" >
 <ul class="list-group">
     
     <li class="list-group-item" *ngFor="let product of listOfProducts">
         <app-cart-items [item]="product"></app-cart-items>
     </li>
-    <li class="list-group-item active" style="width: auto;">
+    <li class="list-group-item " style="width: auto;">
         <b style="float: right;">Total : {{ cartTotal| currency:'INR'}}</b>
+    </li>
+    <li class="list-group-item active" style="width: auto;">
+        <button class="btn btn-primary" style="margin-left: 190px;" (click)="placeOrder()">Place Order</button>
     </li>
 </ul>
 </div>

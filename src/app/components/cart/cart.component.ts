@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -9,7 +10,7 @@ import { Product } from 'src/app/models/product';
 export class CartComponent implements OnInit {
   listOfProducts:Product[]=[]
   cartTotal:number;
-  constructor(private cartservice:CartService) { }
+  constructor(private cartservice:CartService,private router:Router) { }
 
   ngOnInit(): void {
     this.listOfProducts=this.cartservice.getItems()
@@ -18,6 +19,13 @@ export class CartComponent implements OnInit {
     })
     this.cartservice.castTotal.subscribe(cartTotal=>this.cartTotal=cartTotal)
   }
-  
+  placeOrder(){
+    if(this.cartTotal>0)
+    alert("order placed successfully")
+  }
+  logout(){
+    this.cartservice.clearCart()
+    this.router.navigate(['/login'])
+  }
   }
 

@@ -18,7 +18,7 @@ public class RegistrationController {
 	private RegistrationService service;
 	
 	@PostMapping("/registeruser")
-	@CrossOrigin(origins = "http://localhost:37901")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public User registerUser(@RequestBody User user)  throws Exception{
 		User obj=null;
 		String username=user.getUsername();
@@ -33,7 +33,7 @@ public class RegistrationController {
 		
 	}
 	@PostMapping("/login")
-	@CrossOrigin(origins = "http://localhost:37901")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public User loginUser(@RequestBody User user) throws Exception {
 		String username=user.getUsername();
 		String password=user.getPassword();

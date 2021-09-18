@@ -18,6 +18,10 @@ cartPage(){
   this.router.navigate(['/cart'])
  
 }
+logout(){
+  this.cartservice.clearCart()
+  this.router.navigate(['/login'])
+}
 }
 
 
