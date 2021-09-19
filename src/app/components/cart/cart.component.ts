@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product';
 import { Router } from '@angular/router';
+import { User } from 'src/app/user';
+import { Cart } from 'src/app/cart';
+import { RegistrationService } from 'src/app/registration.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -10,7 +13,9 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   listOfProducts:Product[]=[]
   cartTotal:number;
-  constructor(private cartservice:CartService,private router:Router) { }
+  activeUsername:string;
+  cart=new Cart();
+  constructor(private cartservice:CartService,private router:Router,private regservice:RegistrationService) { }
 
   ngOnInit(): void {
     this.listOfProducts=this.cartservice.getItems()
@@ -21,7 +26,17 @@ export class CartComponent implements OnInit {
   }
   placeOrder(){
     if(this.cartTotal>0)
-    alert("order placed successfully")
+    this.listOfProducts=this.cartservice.getItems()
+    this.listOfProducts.forEach(item=>{
+      this.activeUsername=this.regservice.username
+      this.cart.item=item.name
+      this.cart.quantity=item.quantity
+      this.cart.price=item.price*item.quantity
+      this.cart.username=this.activeUsername
+      this.regservice.cartStorage(this.cart).subscribe(
+        data =>alert("order placed successfully"),
+        error=>console.log("error"));
+    })
   }
   logout(){
     this.cartservice.clearCart()

@@ -13,7 +13,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { CountComponent } from './components/count/count.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     CartItemsComponent,
     ProductListItemsComponent,
     FilterComponent,
-    CountComponent
+    CountComponent,
+    
   ],
   imports: [
     BrowserModule,

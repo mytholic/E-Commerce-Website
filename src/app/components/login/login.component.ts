@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     data =>alert("registered successfully"),
     error=>alert("user exist"))}
     else{
-      alert("no correct")
+      alert("Please fill all the fields ")
     }
     
 

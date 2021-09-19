@@ -1,6 +1,127 @@
+<div id="filter" class="card" style="float: right , width: 140px;">
+  
+        <h6 >Category</h6>
+      <form #filterForm="ngForm" (ngSubmit)="filter(filterForm.value)"> 
+        <div class="form-check  ">
+          <input
+        
+          type="radio"
+          class="filter-option form-check-input"
+          id="shirts"
+          name="category"
+          value="none"
+          ngModel
+        />
+        <label
+          class="form-check-label small text-uppercase card-link-secondary"
+          for="none"
+          >None </label>
+          </div>
+          <div class="form-check  ">
+          <input
+        
+            type="radio"
+            class="filter-option form-check-input"
+            id="shirts"
+            name="category"
+            value="shirts"
+            ngModel
+          />
+          <label
+            class="form-check-label small text-uppercase card-link-secondary"
+            for="shirts"
+            >shirts </label>
+          
+        </div>
+        <div class="form-check ">
+          <input
+            
+            type="radio"
+            class="filter-option form-check-input"
+            id="pants"
+            name="category"
+            value="pants"
+            ngModel
+          />
+          <label
+            class="form-check-label small text-uppercase card-link-secondary"
+            for="500"
+            >Pants</label
+          >
+        </div>
+        <div class="form-check">
+          <input
+          
+            type="radio"
+            class="filter-option form-check-input"
+            id="phone"
+            name="category"
+            value="phone"
+            ngModel
+          />
+          <label
+            class="form-check-label small text-uppercase card-link-secondary"
+            for="phone"
+            >Phone</label
+          >
+        </div>
+        <div class="form-check ">
+          <input
+          
+            type="radio"
+            class="filter-option form-check-input"
+            id="laptop"
+            name="category"
+            value="laptop"
+            ngModel
+          />
+          <label
+            class="form-check-label small text-uppercase card-link-secondary"
+            for="laptop"
+            >laptops</label
+          >
+        </div>
+        <div class="form-check ">
+          <input
+    
+            type="radio"
+            class="filter-option form-check-input"
+            id="tv"
+            name="category"
+            ngModel
+            value="tv"
+          />
+          <label
+            class="form-check-label small text-uppercase card-link-secondary"
+            for="tv"
+            >Tv</label
+          >
+        </div>
+        <div class="form-check ">
+            <input
+      
+              type="radio"
+              class="filter-option form-check-input"
+              id="powerbank"
+              name="category"
+              ngModel
+              value="powerbank"
+            />
+            <label
+              class="form-check-label small text-uppercase card-link-secondary"
+              for="powerbank"
+              >power bank</label
+            >
+          </div>
+      
+      <input type="submit" class="btn btn-success" value="search">
+    </form>
+
+  </div>
 <div class=" row">
     
-    <div class="col-md-5" *ngFor="let product of  listOfProducts">
+    <div class="col-md-4" *ngFor="let product of  listOfProducts ">
         <app-product-list-items [items]="product"></app-product-list-items>
     </div>
 </div>
+
