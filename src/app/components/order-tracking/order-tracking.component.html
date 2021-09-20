@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <button class="btn btn-outline-danger " style="float: right;" routerLink="/product">Home</button>
+      <button class="btn btn-outline-danger " style="float: right;" (click)="logout()">Log Out</button>
+      
+  </nav>
+
+<div class="item-container" style="width: 700px;border: solid;margin-left: 200px;">
+    <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Item</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Address</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+            <tr *ngFor="let order of orderDetails">
+                
+            
+                <td>{{order.item}}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{order.address}}</td>
+                <td>{{order.price}}</td>
+            
+          
+          </tr>
+         </tbody>
+         </table> 
+
+    
+  
+
+</div>
+
+<button class="btn btn-primary" style="margin-left: 550px;margin-top: 50px;" (click)="orderTracking()">Track Order</button>
+<br>
+<div ><br><b class="text">{{message}}</b></div>

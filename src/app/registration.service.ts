@@ -9,6 +9,7 @@ import { Cart } from './cart';
 })
 export class RegistrationService {
    username:string;
+  
   constructor(private _http:HttpClient) { }
 
   public login(user:User){
@@ -23,4 +24,7 @@ export class RegistrationService {
    public cartStorage(cart:Cart){
     return this._http.post<any>("http://localhost:8080/cart",cart)
    }
+  public getOrders(){
+    return this._http.get("http://localhost:8080/getOrders")
+  }
 }

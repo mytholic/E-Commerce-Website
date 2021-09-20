@@ -18,10 +18,12 @@ import javax.persistence.Table;
 	private String username;
 
 	private String item;
-
+	private String address;
 	private int quantity;
 
 	private int  price;
+
+
 
 	public Cart() {}
 
@@ -31,12 +33,21 @@ import javax.persistence.Table;
 	
 	
 
-	public Cart(String username, String item, int quantity, int price) {
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Cart(String username, String item, int quantity, int price,String address) {
 		super();
 		this.username = username;
 		this.item = item;
 		this.quantity = quantity;
 		this.price = price;
+		this.address=address;
 	}
 
 	public void setUsername(String username) {

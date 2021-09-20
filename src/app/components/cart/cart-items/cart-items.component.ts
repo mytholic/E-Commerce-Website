@@ -9,6 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartItemsComponent implements OnInit {
   @Input()item:Product
   cartTotal:number
+  count:number
   constructor(private cartservice:CartService) { }
 
   ngOnInit(): void {
@@ -16,10 +17,13 @@ export class CartItemsComponent implements OnInit {
   remove(product:Product){
         this.cartservice.removeItems(product);
         this.cartservice.TotalCost()
+        this.count= this.cartservice.itemRemovedFromCart()
         
 
   }
   addToCart(product: Product) {
     this.cartservice.addToCart(product);
+    this.count=this.cartservice.itemCountInCart()
     this.cartservice.TotalCost()}
+
 }

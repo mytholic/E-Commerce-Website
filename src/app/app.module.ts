@@ -14,6 +14,9 @@ import { CountComponent } from './components/count/count.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OrderTrackingComponent } from './components/order-tracking/order-tracking.component';
+import { OrderTrackingItemsComponent } from './components/order-tracking-items/order-tracking-items.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ProductListItemsComponent,
     FilterComponent,
     CountComponent,
+    OrderTrackingComponent,
+    OrderTrackingItemsComponent,
+
     
   ],
   imports: [

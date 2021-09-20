@@ -3,8 +3,8 @@ export class Cart{
     username:string;
     item:string;
     quantity:number;
-    price:number
-
+    price:number;
+    address:string;
 
     constructor(){
     }

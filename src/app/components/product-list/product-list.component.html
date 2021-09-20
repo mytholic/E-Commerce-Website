@@ -1,8 +1,11 @@
-<div id="filter" class="card" style="float: right , width: 140px;">
+<!-- Section: Price -->
+
+<section  style="float: right;margin-top: 20px;">
+
   
-        <h6 >Category</h6>
+  <h6 class="font-weight-bold mb-3">Category</h6>
       <form #filterForm="ngForm" (ngSubmit)="filter(filterForm.value)"> 
-        <div class="form-check  ">
+        <div class="form-check pl-0 mb-3">
           <input
         
           type="radio"
@@ -17,7 +20,7 @@
           for="none"
           >None </label>
           </div>
-          <div class="form-check  ">
+          <div class="form-check pl-0 mb-3">
           <input
         
             type="radio"
@@ -33,7 +36,7 @@
             >shirts </label>
           
         </div>
-        <div class="form-check ">
+        <div class="form-check pl-0 mb-3">
           <input
             
             type="radio"
@@ -49,7 +52,7 @@
             >Pants</label
           >
         </div>
-        <div class="form-check">
+        <div class="form-check pl-0 mb-3">
           <input
           
             type="radio"
@@ -65,7 +68,7 @@
             >Phone</label
           >
         </div>
-        <div class="form-check ">
+        <div class="form-check pl-0 mb-3">
           <input
           
             type="radio"
@@ -81,7 +84,7 @@
             >laptops</label
           >
         </div>
-        <div class="form-check ">
+        <div class="form-check pl-0 mb-3">
           <input
     
             type="radio"
@@ -97,7 +100,7 @@
             >Tv</label
           >
         </div>
-        <div class="form-check ">
+        <div class="form-check pl-0 mb-3">
             <input
       
               type="radio"
@@ -117,11 +120,15 @@
       <input type="submit" class="btn btn-success" value="search">
     </form>
 
-  </div>
+ 
+</section>
+
 <div class=" row">
     
-    <div class="col-md-4" *ngFor="let product of  listOfProducts ">
-        <app-product-list-items [items]="product"></app-product-list-items>
-    </div>
-</div>
+  
+    <div class="card" style="width: 28rem;" *ngFor="let product of  listOfProducts ">
+      <app-product-list-items [items]="product"></app-product-list-items>
+  </div>
 
+
+</div>

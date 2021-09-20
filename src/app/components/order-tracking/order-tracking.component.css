@@ -1,0 +1,12 @@
+.box{
+    width: 300px; 
+    border:blue;
+    margin-top: 40px;
+    height: 200px;
+    margin-left: 500px;
+}
+.text{
+    font-size: larger;
+    margin-left: 550px;
+    color: crimson;
+}

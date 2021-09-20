@@ -1,11 +1,11 @@
-<nav class="navbar navbar-success bg-success justify-content-between">
+<nav class="navbar navbar-success bg-primary justify-content-between">
 
-    <form class="form-inline" #loginform="ngForm" (submit)="login()">
+    <form  #loginform="ngForm" (submit)="login()">
         <input type="text" placeholder="Username" style="margin-left: 630px;" name="username"
             [(ngModel)]="user.username">
-        <input type="password" placeholder="Password" name="password" style="margin-left: 10px;margin-right: 10px;"
+        <input type="password" placeholder="Password" name="password" style="margin-left: 20px;margin-right: 10px;"
             [(ngModel)]="user.password">
-        <input type="submit" class="btn btn-danger" value="Login" style="float: right;">
+        <input type="submit" class="btn btn-danger" value="Login" style="margin-left: 30px;">
 
     </form>
 

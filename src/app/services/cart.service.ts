@@ -3,6 +3,7 @@ import { Product } from '../models/product';
 import { BehaviorSubject } from 'rxjs';
 import { ThrowStmt } from '@angular/compiler';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,13 +14,22 @@ export class CartService {
   castCount=this.countItem.asObservable();
   private Total=new BehaviorSubject<number>(this.cartTotal);
   castTotal=this.Total.asObservable();
-
+  address:string;
   cartItems:Product[]=[];
   constructor() { 
     
   }
+  getAddress(val:string){
+    this.address=val
+    return this.address
+  }
   itemCountInCart(){
     this.count=this.count+1
+    this.countItem.next(this.count)
+    return this.count
+  }
+  itemRemovedFromCart(){
+    this.count=this.count-1
     this.countItem.next(this.count)
     return this.count
   }
@@ -82,7 +92,8 @@ export class CartService {
     this.cartItems = [];
     return this.cartItems;
   }
- 
+
+  
 
 }
 
