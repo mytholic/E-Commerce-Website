@@ -16,22 +16,32 @@
     <div id="inner">
         <form (submit)="registration()" #registerform="ngForm">
             <label for="name"><span style="margin-left: 87px;">Name : </span></label>
-            <input type="text" id="name" style="height: 30px;" name="name" required [(ngModel)]="user.name">
+            <input type="text" id="name"   style="height: 30px;" #name="ngModel"  required pattern="^[a-zA-Z]+$" name="name" required [(ngModel)]="user.name">
+             <span *ngIf="name.errors?.pattern" style="margin-left: 120px;">Enter proper name  </span><br>
+
             <label for="username"><span style="margin-left: 57px;">Username : </span></label>
-            <input type="text" id="username" style="height: 30px;margin-top: 40px;" name="username"
-                [(ngModel)]="user.username" required><br>
-         
-            <label for="password"><span style="margin-left: 57px;">Password : </span></label>
-            <input type="password" style="margin-top: 40px; height: 35px;" id="password" required name="password"
+            <input type="text" #username="ngModel" id="username" style="height: 30px;margin-top: 40px;" name="username" 
+                [(ngModel)]="user.username" [ngClass]="{'is-invalid':registerform.submitted && username.invalid}"  required pattern="^[a-zA-Z]+[a-z0-9._%+-]+$"required><br>
+                <span class="invalid-feedback" style="margin-left: 200px;">Username can't be blank</span>
+                <span *ngIf="username.errors?.pattern">Should start with a letter and  contain more than one character  </span>
+
+                <label for="password"><span style="margin-left: 57px;">Password : </span></label>
+            <input type="password" #password="ngModel" [ngClass]="{'is-invalid':registerform.submitted && password.invalid}" style="margin-top: 40px; height: 35px;" id="password" required name="password"
                 [(ngModel)]="user.password"><br>
+                <span class="invalid-feedback" style="margin-left: 200px;">Password can't be blank</span>
+            
             <label for="email"><span style="margin-left: 87px;">Email:  </span></label>
-            <input type="email" style="margin-top: 40px; height: 35px;" id="email" required name="cpassword"
-            [(ngModel)]="user.email"><br>
+
+            <input type="email" #email="ngModel"    style="margin-top: 40px; height: 35px;" id="email" required name="email"
+            [(ngModel)]="user.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+            <span *ngIf="email.errors?.pattern" style="margin-left: 200px;">Email format incorrect </span><br>
+            
 
             <label for="address"><span style="margin-left: 66px;">Address : </span> </label>
-            <input type="text" id="address" style="margin-top: 40px;height: 130px;" name="address"
-                [(ngModel)]="user.address" required><br>
-            <input type="submit" style="margin-left: 200px;margin-top: 20px;" class="btn btn-outline-success" value="Register">
+            <input type="text"  #address="ngModel" id="address" style="margin-top: 40px;height: 130px;" name="address"
+                [(ngModel)]="user.address" ><br>
+                
+            <input type="submit" [disabled]="registerform.invalid"style="margin-left: 200px;margin-top: 20px;" class="btn btn-outline-success" value="Register">
 
         </form>
     </div>

@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
   cart=new Cart();
   orderTracker=["Order Placed","Order Dispatched","Order In Transit","Order Delivered"]
   message:string
-
+  order:any
   constructor(private cartservice:CartService,private router:Router,private regservice:RegistrationService) { }
 
   ngOnInit(): void {
