@@ -1,6 +1,6 @@
-<nav class="navbar navbar-light bg-light justify-content-between">
+<nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
     <button class="btn btn-outline-danger "  routerLink="/product">Home</button>
-    <button class="btn btn-outline-danger " routerLink="/tracking">Track Orders</button>    
+     
     <button class="btn btn-outline-danger " (click)="logout()">Log Out</button>
       
   </nav>
@@ -11,13 +11,13 @@
     <li class="list-group-item" *ngFor="let product of listOfProducts">
         <app-cart-items [item]="product"></app-cart-items>
     </li>
-    <li class="list-group-item " style="width: auto;">
+    <li class="list-group-item active" style="width: auto;">
         <b style="float: right;">Total : {{ cartTotal| currency:'INR'}}</b>
     </li>
     
 </ul>
 </div>
-<div class="container" style="width: 700px; float: left;margin-top: 50px;background-color: beige;">
+<div class="container" style="width: 700px; float: left;margin-top: 50px;color:blue;background-color: beige;">
 
         <div class="card card-outline-secondary">
             <div class="card-body">
@@ -74,7 +74,7 @@
                     
                        
                         <div class="col-md-6">
-                            <button type="submit" style="margin-left: 250px;"(click)="placeOrder()"class="btn btn-success ">Pay</button>
+                            <button type="submit" style="margin-left: 250px;"(click)="placeOrder()"class="btn btn-outline-success ">Pay</button>
                         </div>
                     </div>
                 </form>

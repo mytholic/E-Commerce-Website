@@ -23,16 +23,10 @@ export class LoginComponent implements OnInit {
   }
   registration(){
     
-  
-    if(this.user.password==this.user.cpassword){  
     this.service.register(this.user).subscribe(
     data =>alert("registered successfully"),
-    error=>alert("user exist"))}
-    else{
-      alert("password does not match")
-    }
+    error=>alert("user exist"))
     
-
 
 }
 }

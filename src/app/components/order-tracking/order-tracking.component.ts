@@ -13,7 +13,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class OrderTrackingComponent implements OnInit {
   orderDetails:Cart[]=[]
   completeOrder:any=null;
-  orderTracker=["Order Placed","Order Dispatched","Order In Transit","Order Delivered"]
+  orderTracker=["Confirmed Order","Processing Order","Quality Check","Product Dispatched","Product Delivered"]
   message:string
   username:string
   item:Cart

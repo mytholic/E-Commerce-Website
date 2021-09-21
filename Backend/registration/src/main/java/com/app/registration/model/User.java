@@ -20,7 +20,7 @@ private String username;
 
 private String password;
 
-private String cpassword;
+private String email;
 
 private String address;
 
@@ -28,12 +28,12 @@ private String address;
 public User() {}
 
 
-public User(String name, String username, String password, String cpassword, String address) {
+public User(String name, String username, String password, String email, String address) {
 	super();
 	this.name = name;
 	this.username = username;
 	this.password = password;
-	this.cpassword = cpassword;
+	this.email = email;
 	this.address = address;
 }
 public String getName() {
@@ -54,12 +54,17 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-public String getCpassword() {
-	return cpassword;
+
+public String getEmail() {
+	return email;
 }
-public void setCpassword(String cpassword) {
-	this.cpassword = cpassword;
+
+
+public void setEmail(String email) {
+	this.email = email;
 }
+
+
 public String getAddress() {
 	return address;
 }

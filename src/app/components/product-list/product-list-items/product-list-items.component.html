@@ -1,8 +1,13 @@
 
 
-  <img [src]="items.image"  alt="Card image cap">
-  <div  style="padding-top: 20px;margin-top: 20px;" >
-    <h5 class="card-title">{{items.name}} <span style="float: right;"><b>{{items.price|currency:'INR'}}</b></span></h5>
-    <p class="card-text">{{items.description}}</p>
-    <button class="btn btn-outline-success" style="margin-bottom: 5px;" (click)="addToCart(items)">ADD TO CART</button>
+  <br>
+  <div style="width: 300px;height: 300px;">
+    <div class="fill">
+    <img [src]="items.image" style="width: 60px;height: 120px;"></div>
+    <strong>{{items.name}}   <span style="float: right;"> {{items.price|currency:'INR'}}</span></strong>
+    <p >
+      {{items.description | slice: 0:100 }}
+    </p> 
+    <button class="btn btn-outline-success"  (click)="addToCart(items)">ADD TO CART</button>
   </div>
+  <br>

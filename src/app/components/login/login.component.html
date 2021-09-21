@@ -1,11 +1,11 @@
-<nav class="navbar navbar-success bg-primary justify-content-between">
+<nav class="navbar navbar-success justify-content-between"style="background-color: #e3f2fd;">
 
     <form  #loginform="ngForm" (submit)="login()">
         <input type="text" placeholder="Username" style="margin-left: 630px;" name="username"
             [(ngModel)]="user.username">
         <input type="password" placeholder="Password" name="password" style="margin-left: 20px;margin-right: 10px;"
             [(ngModel)]="user.password">
-        <input type="submit" class="btn btn-danger" value="Login" style="margin-left: 30px;">
+        <input type="submit" class="btn btn-outline-danger" value="Login" style="margin-left: 30px;">
 
     </form>
 
@@ -20,17 +20,18 @@
             <label for="username"><span style="margin-left: 57px;">Username : </span></label>
             <input type="text" id="username" style="height: 30px;margin-top: 40px;" name="username"
                 [(ngModel)]="user.username" required><br>
+         
             <label for="password"><span style="margin-left: 57px;">Password : </span></label>
             <input type="password" style="margin-top: 40px; height: 35px;" id="password" required name="password"
                 [(ngModel)]="user.password"><br>
-            <label for="cpassword">Confirm Password : </label>
-            <input type="password" style="margin-top: 40px; height: 35px;" id="cpassword" required name="cpassword"
-                [(ngModel)]="user.cpassword"><br>
+            <label for="email"><span style="margin-left: 87px;">Email:  </span></label>
+            <input type="email" style="margin-top: 40px; height: 35px;" id="email" required name="cpassword"
+            [(ngModel)]="user.email"><br>
 
             <label for="address"><span style="margin-left: 66px;">Address : </span> </label>
             <input type="text" id="address" style="margin-top: 40px;height: 130px;" name="address"
                 [(ngModel)]="user.address" required><br>
-            <input type="submit" style="margin-left: 200px;margin-top: 20px;" class="btn btn-success" value="Register">
+            <input type="submit" style="margin-left: 200px;margin-top: 20px;" class="btn btn-outline-success" value="Register">
 
         </form>
     </div>
