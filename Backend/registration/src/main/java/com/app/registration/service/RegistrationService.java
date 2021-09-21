@@ -10,6 +10,7 @@ import com.app.registration.repository.RegistrationRepository;
 public class RegistrationService {
 	@Autowired
 	private RegistrationRepository repo;
+	
 	public User saveUser(User user) {
 		repo.save(user);
 		return user;

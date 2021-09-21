@@ -27,7 +27,7 @@ public class RegistrationController {
 		if(obj != null) {
 			throw new Exception("username already exists");
 		}
-		
+			
 			obj=service.saveUser(user);
 			return obj;
 		
