@@ -1,0 +1,36 @@
+
+<nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
+    <button class="btn btn-outline-danger "  routerLink="/product">Home</button>
+     
+    <button class="btn btn-outline-danger " (click)="logout()">Log Out</button>
+      
+  </nav>
+
+  <div class="container">
+    <header><B style="text-align: center;">Update Details</B> </header>
+
+    <div id="inner">
+        <form (submit)="update()" #registerform="ngForm">
+            
+
+                <label for="password"><span style="margin-left: 57px;">Password : </span></label>
+            <input type="password" #password="ngModel" [ngClass]="{'is-invalid':registerform.submitted && password.invalid}" style="margin-top: 40px; height: 35px;" id="password" required name="password"
+                [(ngModel)]="user.password"><br>
+                <span class="invalid-feedback" style="margin-left: 200px;"></span>
+            
+            <label for="email"><span style="margin-left: 87px;">Email:  </span></label>
+
+            <input type="email" #email="ngModel"    style="margin-top: 40px; height: 35px;" id="email" required name="email"
+            [(ngModel)]="user.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+            <span *ngIf="email.errors?.pattern" style="margin-left: 200px;">Email format incorrect </span><br>
+            
+
+            <label for="address"><span style="margin-left: 66px;">Address : </span> </label>
+            <input type="text"  #address="ngModel" id="address" style="margin-top: 40px;height: 130px;" name="address"
+                [(ngModel)]="user.address" ><br>
+                
+            <input type="submit" style="margin-left: 200px;margin-top: 20px;" class="btn btn-outline-success" value="Update">
+
+        </form>
+    </div>
+    </div>

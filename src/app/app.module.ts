@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OrderTrackingComponent } from './components/order-tracking/order-tracking.component';
 import { OrderTrackingItemsComponent } from './components/order-tracking-items/order-tracking-items.component';
+import { UpdateDetailsComponent } from './components/update-details/update-details.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { OrderTrackingItemsComponent } from './components/order-tracking-items/o
     CountComponent,
     OrderTrackingComponent,
     OrderTrackingItemsComponent,
+    UpdateDetailsComponent,
 
     
   ],

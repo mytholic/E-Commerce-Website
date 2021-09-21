@@ -21,6 +21,11 @@ export class RegistrationService {
     return this._http.post<any>("http://localhost:8080/registeruser",user)
    }
 
+  public update(user:User){
+  
+    return this._http.put<any>("http://localhost:8080/update",user)
+   }
+ 
    public cartStorage(cart:Cart){
     return this._http.post<any>("http://localhost:8080/cart",cart)
    }

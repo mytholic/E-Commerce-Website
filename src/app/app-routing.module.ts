@@ -4,6 +4,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { LoginComponent } from './components/login/login.component';
 import { OrderTrackingComponent } from './components/order-tracking/order-tracking.component';
 import { ProductsComponent } from './components/products/products.component';
+import { UpdateDetailsComponent } from './components/update-details/update-details.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path:'tracking',component:OrderTrackingComponent
+  },
+  {
+    path:'account',component:UpdateDetailsComponent
   }
 ];
 
