@@ -1,4 +1,6 @@
 package com.app.registration.controller;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,6 +24,9 @@ public class CartController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	public Cart cartStorage(@RequestBody Cart cart)  {
 		Cart obj=null;
+		LocalDate date=cart.getDate();
+		date=java.time.LocalDate.now();
+		cart.setDate(date);
 		obj=service.saveUser(cart);
 		return obj;
 		

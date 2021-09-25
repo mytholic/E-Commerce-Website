@@ -27,9 +27,11 @@ export class RegistrationService {
    }
  
    public cartStorage(cart:Cart){
+
     return this._http.post<any>("http://localhost:8080/cart",cart)
    }
   public getOrders(){
+   
     return this._http.get("http://localhost:8080/getOrders")
   }
 }

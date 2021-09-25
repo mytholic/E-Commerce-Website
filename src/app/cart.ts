@@ -5,7 +5,7 @@ export class Cart{
     quantity:number;
     price:number;
     address:string;
-
+    date:string;
     constructor(){
     }
 

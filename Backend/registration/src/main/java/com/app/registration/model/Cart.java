@@ -1,5 +1,8 @@
 package com.app.registration.model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +26,17 @@ import javax.persistence.Table;
 
 	private int  price;
 
+	private LocalDate date;
 
+
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
 
 	public Cart() {}
 
@@ -41,13 +54,14 @@ import javax.persistence.Table;
 		this.address = address;
 	}
 
-	public Cart(String username, String item, int quantity, int price,String address) {
+	public Cart(String username, String item, int quantity, int price,String address,LocalDate date) {
 		super();
 		this.username = username;
 		this.item = item;
 		this.quantity = quantity;
 		this.price = price;
 		this.address=address;
+		this.date=date;
 	}
 
 	public void setUsername(String username) {
