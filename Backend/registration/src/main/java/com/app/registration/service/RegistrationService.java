@@ -1,8 +1,11 @@
 package com.app.registration.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.registration.model.Cart;
 import com.app.registration.model.User;
 import com.app.registration.repository.RegistrationRepository;
 
@@ -24,5 +27,9 @@ public class RegistrationService {
 		return repo.getByUsernameAndPassword(username,password);
 		
 	}
-	
+	public List<User> getOrders(){
+		return  repo.findAll();
+		
+
+	}
 }

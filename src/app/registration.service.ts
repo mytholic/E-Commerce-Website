@@ -34,4 +34,9 @@ export class RegistrationService {
    
     return this._http.get("http://localhost:8080/getOrders")
   }
+
+  public getusers(){
+    return this._http.get("http://localhost:8080/getuser")
+  }
+
 }

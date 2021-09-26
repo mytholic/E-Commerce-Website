@@ -15,9 +15,25 @@ export class UpdateDetailsComponent implements OnInit {
   user=new User();
   username:string
   name:string
+  completeusers:any
+  currentuser:any
   ngOnInit(): void {
-    
+    // this.service.getusers().subscribe(
+    //   data =>{this.completeusers=data
+        
+    //   this.filterUsers()},
+    //   error=>alert("user exist"))
+    alert("If no update is required leave that field blank")
   }
+//  filterUsers(){
+//    for(let u of this.completeusers){
+//      if(u.username=this.service.username){
+//        this.currentuser=u
+//        break
+//      }
+//    }
+
+//  }
 
   logout(){
     this.cartservice.clearCart()
